@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.orf">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Guitar</title>
+</head>
+<body>
+	<form th:object="${newGuitar}" th:action="@{/update/{id}(id=${newGuitar.id})}" method='post'>
+ 	
+ 	Brand: <input name="brand" size="20" th:field="*{brand}"> <br />
+ 	Model: <input name="model" size="20" th:field="*{model}"> <br />
+ 	Wholesale Price: <input name="wholesalePrice" size="20" th:field="*{wholesalePrice}"> <br />
+ 	Retail Price: <input name="retailPrice" size="20" th:field="*{retailPrice}"> <br />
+ 	Amount in stock: <input name="inventoryCount" size="20" th:field="*{inventoryCount}"> <br />
+ 	
+ 	<input name = "submit" type = "submit" value="submit"/>
+
+	</form>
+<a href="viewAll">View All Guitars</a>
+</body>
+</html>

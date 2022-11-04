@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Guitars</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentGuitar : ${guitars}">
+	<td th:text="${currentGuitar.id}" />
+	<td th:text="${currentGuitar.brand}" />
+	<td th:text="${currentGuitar.model}" />
+	<td th:text="${currentGuitar.wholesalePrice}" />
+	<td th:text="${currentGuitar.retailPrice}" />
+	<td th:text="${currentGuitar.inventoryCount}" />
+	<td><a th:href = "@{/edit/{id}(id=${currentGuitar.id})}">Edit Guitar</a></td>
+	<td><a th:href = "@{/delete/{id}(id=${currentGuitar.id})}">Delete Guitar</a></td>
+	
+</tr>		
+</table>
+</form>
+<a href = "../inputGuitar">Add a new guitar</a>
+</body>
+</html>
